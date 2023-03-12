@@ -34,4 +34,30 @@
 
     <!--    静态资源放行配置-->
     <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
+    <mvc:resources mapping="/upload/**" location="/upload/"></mvc:resources>
+    <!--文件上传解析组件
+            id必须为multipartResolver
+            springmvc默认使用该id找该组件
+            -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+<!--        <property name="maxUploadSize" value="5242880"></property> 异常了可以通过异常解析器解决-->
+    </bean>
+
+<!--    注册拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/login.do"/>
+            <bean id="myInterceptor" class="com.example.interceptor.MyInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+<!--    spring mvc 已经给实现好了,直接用-->
+<!--    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">-->
+<!--        <property name="exceptionMappings">-->
+<!--            <props>-->
+<!--                <prop key="java.lang.ArithmeticException">redirect:/error.jsp</prop>-->
+<!--                <prop key="java.lang.NullPointerException">redirect:/fail.jsp</prop>-->
+<!--            </props>-->
+<!--        </property>-->
+<!--    </bean>-->
 </beans>

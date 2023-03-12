@@ -12,5 +12,6 @@
 </head>
 <body>
 fail
+${msg}
 </body>
 </html>

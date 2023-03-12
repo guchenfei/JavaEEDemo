@@ -23,7 +23,6 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <!--配置spring包扫描-->
     <context:component-scan base-package="com.example"/>
-
     <!--    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"></bean>-->
     <!--    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"></bean>-->
     <!--   开启mvc注解驱动-->

@@ -12,5 +12,8 @@
 </head>
 <body>
 success
+<%
+    System.out.println("success,jsp");
+%>
 </body>
 </html>
